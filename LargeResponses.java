@@ -1,5 +1,3 @@
-package com.techolutions;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -11,9 +9,11 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 
+
 public class LargeResponses {
 
-	public static void main(String[] args) {
+
+	 static String largeResponses(String inputfile) {
 
 
         try {
@@ -21,7 +21,7 @@ public class LargeResponses {
 
             Scanner input = new Scanner(System.in);
 
-            File file = new File(input.nextLine());
+            File file = new File(inputfile);
 //C:\Users\LivingRoom\Downloads\puzzles\Done\hosts_access_log_00.txt
             input = new Scanner(file);
             String fileName="bytes_"+file.getName();
@@ -50,12 +50,13 @@ public class LargeResponses {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            
+            return fileName;
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     
 	}
+
 
 }
